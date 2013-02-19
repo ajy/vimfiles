@@ -132,6 +132,7 @@ endif
 
 " ================ Indentation ======================
 
+" default settings
 set autoindent
 set smartindent
 set smarttab
@@ -141,11 +142,15 @@ set tabstop=4
 set expandtab
 set shiftround "round off indent to multiple of shiftwidth, untested
 
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points, without inserting <EOL>s
+
+if has('autocmd')
+    "Adjust indentation by filetype
+    autocmd FileType go setlocal ai ts=8 sw=8 noexpandtab
+endif
 
 " ================ Completion =======================
 
