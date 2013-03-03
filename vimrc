@@ -163,6 +163,8 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jp
 try
   "get custom colorscheme
   colorscheme solarized
+  set background=dark
+  call togglebg#map("<F6>")
 catch "if you can't, use this scheme
   colorscheme slate
 endtry
