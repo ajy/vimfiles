@@ -35,6 +35,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'sjl/clam.vim'
+Bundle 'mhinz/vim-startify'
 
 "Language support bundles
 Bundle 'tpope/vim-markdown'
@@ -43,12 +44,12 @@ Bundle 'tpope/vim-git'
 
 "misc bundles
 Bundle 'Lokaltog/vim-powerline'
+" Bundle 'maciakl/vim-neatstatus'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'altercation/vim-colors-solarized'
 
 " ================ General Config ====================
 
@@ -157,9 +158,7 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jp
 
 try
   "get custom colorscheme
-  colorscheme solarized
-  set background=dark
-  call togglebg#map("<F6>")
+  colorscheme jellybeans
 catch "if you can't, use this scheme
   colorscheme slate
 endtry
@@ -190,10 +189,6 @@ nnoremap <F5> :GundoToggle<CR>
 "Yankring
 let g:yankring_persist = 0 "don't persist yankring across session
 let g:yankring_history_dir = '~/.vim'
-
-let g:SuperTabDefaultCompletionType = 'context' "use context to complete by default
-
-let g:snips_trigger_key='<c-space>' "changed snipmate trigger key
 
 " open tagbar window
 nmap <F8> :TagbarToggle<CR>
