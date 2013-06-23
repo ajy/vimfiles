@@ -13,13 +13,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 "Autocompletion bundles
-Bundle 'kana/vim-smartinput'
-Bundle 'ervandew/supertab'
-Bundle 'tpope/vim-ragtag'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'honza/snipmate-snippets'
-Bundle 'garbas/vim-snipmate'
+Bundle 'Raimondi/delimitMate'
+Bundle 'Shougo/neocomplcache.vim'
 
 "file/directory movement bundles
 Bundle 'Lokaltog/vim-easymotion.git'
