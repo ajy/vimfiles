@@ -36,6 +36,7 @@ Bundle 'tpope/vim-abolish'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'sjl/clam.vim'
 Bundle 'mhinz/vim-startify'
+Bundle 'Shougo/unite.vim'
 
 "Language support bundles
 Bundle 'tpope/vim-markdown'
@@ -43,8 +44,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-git'
 
 "misc bundles
-Bundle 'Lokaltog/vim-powerline'
-" Bundle 'maciakl/vim-neatstatus'
+" Bundle 'Lokaltog/vim-powerline'
+Bundle 'maciakl/vim-neatstatus'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 
@@ -237,3 +238,86 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Settings for Unite
+
+" Use the fuzzy matcher for everything
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+" Set up some custom ignores
+call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+      \ 'ignore_pattern', join([
+      \ '\.git/',
+      \ ], '\|'))
+
+" Map space to the prefix for Unite
+nnoremap [unite] <Nop>
+nmap <space> [unite]
+
+" General fuzzy search
+nnoremap <silent> [unite]<space> :<C-u>Unite
+      \ -buffer-name=files buffer file_mru file_rec<CR>
+
+" Quick buffer and mru
+nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=buffers buffer file_mru<CR>
+
+" Quick yank history
+nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<CR>
+
+" Quick file search
+nnoremap <silent> [unite]f :<C-u>Unite -buffer-name=files file_rec file/new<CR>
+
+" Quick help
+nnoremap <silent> [unite]h :<C-u>Unite -buffer-name=help help<CR>
+
+" Quick line using the word under cursor
+nnoremap <silent> [unite]l :<C-u>UniteWithCursorWord -buffer-name=search_file line<CR>
+
+" Quick commands
+nnoremap <silent> [unite]c :<C-u>Unite -buffer-name=commands command<CR>
+
+" create mappings inside unite buffers
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+
+    "mappings to leave unite
+    nmap <buffer> <ESC> <Plug>(unite_exit)
+    imap <buffer> <ESC> <Plug>(unite_insert_leave)
+
+    "mappings to move in unite buffers
+    imap <buffer> <c-j> <Plug>(unite_insert_leave)
+    nmap <buffer> <c-j> <Plug>(unite_loop_cursor_down)
+    nmap <buffer> <c-k> <Plug>(unite_loop_cursor_up)
+
+    imap <buffer> <c-a> <Plug>(unite_choose_action)
+
+    nmap <buffer> <C-r> <Plug>(unite_redraw)
+    imap <buffer> <C-r> <Plug>(unite_redraw)
+
+    "mappings to open in split
+    inoremap <silent><buffer><expr> <C-s> unite#do_action('split')
+    nnoremap <silent><buffer><expr> <C-s> unite#do_action('split')
+    inoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+    nnoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+
+    nnoremap <silent><buffer><expr> cd     unite#do_action('lcd')
+
+endfunction
+
+" Start in insert mode
+let g:unite_enable_start_insert = 1
+
+" Enable history yank source
+let g:unite_source_history_yank_enable = 1
+
+" Open in bottom right
+let g:unite_split_rule = "botright"
+
+" Shorten the default update date of 500ms
+let g:unite_update_time = 200
+
+let g:unite_source_file_mru_limit = 1000
+let g:unite_cursor_line_highlight = 'TabLineSel'
+
+let g:unite_source_file_mru_filename_format = ':~:.'
+let g:unite_source_file_mru_time_format = ''
