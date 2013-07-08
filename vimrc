@@ -185,7 +185,7 @@ nnoremap <F4> :NERDTreeToggle<CR>
 "Gundo
 let g:gundo_preview_bottom = 1 "improve how gundo window is displayed
 " open gundo window
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <F3> :GundoToggle<CR>
 
 "Yankring
 let g:yankring_persist = 0 "don't persist yankring across session
