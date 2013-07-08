@@ -45,9 +45,11 @@ Bundle 'tpope/vim-git'
 
 "misc bundles
 " Bundle 'Lokaltog/vim-powerline'
-Bundle 'maciakl/vim-neatstatus'
+" Bundle 'maciakl/vim-neatstatus'
+Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
+Bundle 'joonty/vdebug'
 
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
@@ -321,3 +323,9 @@ let g:unite_cursor_line_highlight = 'TabLineSel'
 
 let g:unite_source_file_mru_filename_format = ':~:.'
 let g:unite_source_file_mru_time_format = ''
+
+" config for airline
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+
+let g:airline_theme = "light"
