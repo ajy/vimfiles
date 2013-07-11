@@ -50,6 +50,7 @@ Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'joonty/vdebug'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
