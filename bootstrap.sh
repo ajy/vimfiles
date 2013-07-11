@@ -17,8 +17,5 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 #get tagbar
 sudo apt-get install exuberant-ctags
 
-#get new powerline
-sudo pip install https://github.com/Lokaltog/powerline/tarball/develop
-
 # now install plugins into vim
 vim +BundleInstall
