@@ -6,7 +6,7 @@ set nocompatible
 " Use vundle plugin to manage all other plugins
 
 filetype off                    " required!
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle ( required! ) 
