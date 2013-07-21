@@ -44,8 +44,6 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-git'
 
 "misc bundles
-" Bundle 'Lokaltog/vim-powerline'
-" Bundle 'maciakl/vim-neatstatus'
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
