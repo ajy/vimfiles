@@ -35,7 +35,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'sjl/clam.vim'
-Bundle 'mhinz/vim-startify'
+" Bundle 'mhinz/vim-startify'
 Bundle 'Shougo/unite.vim'
 
 "Language support bundles
@@ -124,8 +124,11 @@ if isdirectory(expand('~/.cache/vim'))
     set directory^=~/.cache/vim//
     set backupdir^=~/.cache/vim//
 else "never store it in the current directory ever
-    set backupdir-=.
-    set directory-=.
+    if !isdirectory(expand('$HOME/.vim_cache'))
+        silent execute '!mkdir '.expand('$HOME/.vim_cache')
+    endif
+    set backupdir^=$HOME/.vim_cache/
+    set directory^=$HOME/.vim_cache/
 endif
 
 " ================ Indentation ======================
@@ -166,7 +169,7 @@ catch "if you can't, use this scheme
 endtry
 
 if has("gui_running")
-  set gfn=Monaco\ for\ Powerline\ 11
+  set gfn=Source_Code_Pro:h10
   let g:Powerline_symbols = 'fancy'
 else
   let g:Powerline_symbols = 'compatible'
