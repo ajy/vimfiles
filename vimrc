@@ -82,6 +82,14 @@ set ignorecase                  "ignore case when looking for patterns
 set smartcase                   "overide ignore case when pattern has upper case
 set hlsearch                    "highlight matched patterns
 set incsearch                   "search incrementally for pattern
+
+"use system clipboard by default for yanking and pasting
+set clipboard=unnamed
+if has("unix")
+    " X system clipboard is different,so
+    set clipboard=unnamedplus
+endif
+
 syntax on
 
 " ================ remapped keys =====================
@@ -111,10 +119,6 @@ nnoremap Y y$
 " Quickly edit/reload the vimrc file in the repo
 nmap <silent> <leader>ev :tabe ~/.vim/vimrc<CR>
 nmap <silent> <leader>sv :echo "Reloading vimrc..."<CR>:so $MYVIMRC<CR>:echo "Reloading vimrc...DONE"<CR>
-
-"key mappings to copy paste using system clipboard
-map <leader>y "+y
-map <leader>p "+p
 
 " ================ Persistent swp/backup ==================
 " Keep swaps and backups in one place,
