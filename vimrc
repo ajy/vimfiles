@@ -35,7 +35,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-abolish'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'sjl/clam.vim'
-" Bundle 'mhinz/vim-startify'
+Bundle 'mhinz/vim-startify'
 Bundle 'Shougo/unite.vim'
 
 "Language support bundles
