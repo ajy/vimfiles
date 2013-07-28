@@ -122,7 +122,7 @@ noremap <F1> <Esc>
 vnoremap <F1> <Esc>
 
 " Quickly edit/reload the vimrc file in the repo
-nmap <silent> <leader>ev :tabe ~/.vim/vimrc<CR>
+nmap <silent> <leader>ev :tabe $MYVIMRC<CR>
 nmap <silent> <leader>sv :echo "Reloading vimrc..."<CR>:so $MYVIMRC<CR>:echo "Reloading vimrc...DONE"<CR>
 
 " ================ Persistent swp/backup ==================
