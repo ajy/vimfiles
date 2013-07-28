@@ -157,6 +157,8 @@ set linebreak    "Wrap lines at convenient points, without inserting <EOL>s
 if has('autocmd')
     "Adjust indentation by filetype
     autocmd FileType go setlocal ai ts=8 sw=8 noexpandtab
+    "Spellcheck git messages
+    autocmd BufRead COMMIT_EDITMSG setlocal spell!
 endif
 
 " ================ Completion =======================
