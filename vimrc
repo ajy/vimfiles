@@ -37,6 +37,8 @@ Bundle 'vim-scripts/YankRing.vim'
 Bundle 'sjl/clam.vim'
 Bundle 'mhinz/vim-startify'
 Bundle 'Shougo/unite.vim'
+Bundle 'Yggdroot/indentLine'
+Bundle 'nelstrom/vim-visual-star-search'
 
 "Language support bundles
 Bundle 'tpope/vim-markdown'
@@ -49,6 +51,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'joonty/vdebug'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'mileszs/ack.vim'
 
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
