@@ -85,6 +85,14 @@ set ignorecase                  "ignore case when looking for patterns
 set smartcase                   "overide ignore case when pattern has upper case
 set hlsearch                    "highlight matched patterns
 set incsearch                   "search incrementally for pattern
+
+"use system clipboard by default for yanking and pasting
+set clipboard=unnamed
+if has("unix")
+    " X system clipboard is different,so
+    set clipboard=unnamedplus
+endif
+
 syntax on
 
 " ================ remapped keys =====================
@@ -111,13 +119,14 @@ nmap <leader>rh :noh<CR>
 " a more logical Y in normal mode
 nnoremap Y y$
 
-" Quickly edit/reload the vimrc file in the repo
-nmap <silent> <leader>ev :tabe ~/.vim/vimrc<CR>
-nmap <silent> <leader>sv :echo "Reloading vimrc..."<CR>:so $MYVIMRC<CR>:echo "Reloading vimrc...DONE"<CR>
+" I can type :help on my own, thanks.
+inoremap <F1> <Esc>
+noremap <F1> <Esc>
+vnoremap <F1> <Esc>
 
-"key mappings to copy paste using system clipboard
-map <leader>y "+y
-map <leader>p "+p
+" Quickly edit/reload the vimrc file in the repo
+nmap <silent> <leader>ev :tabe $MYVIMRC<CR>
+nmap <silent> <leader>sv :echo "Reloading vimrc..."<CR>:so $MYVIMRC<CR>:echo "Reloading vimrc...DONE"<CR>
 
 " ================ Persistent swp/backup ==================
 " Keep swaps and backups in one place,
@@ -127,8 +136,11 @@ if isdirectory(expand('~/.cache/vim'))
     set directory^=~/.cache/vim//
     set backupdir^=~/.cache/vim//
 else "never store it in the current directory ever
-    set backupdir-=.
-    set directory-=.
+    if !isdirectory(expand('$HOME/.vim_cache'))
+        silent execute '!mkdir '.expand('$HOME/.vim_cache')
+    endif
+    set backupdir^=$HOME/.vim_cache/
+    set directory^=$HOME/.vim_cache/
 endif
 
 " ================ Indentation ======================
@@ -151,6 +163,8 @@ set linebreak    "Wrap lines at convenient points, without inserting <EOL>s
 if has('autocmd')
     "Adjust indentation by filetype
     autocmd FileType go setlocal ai ts=8 sw=8 noexpandtab
+    "Spellcheck git messages
+    autocmd BufRead COMMIT_EDITMSG setlocal spell!
 endif
 
 " ================ Completion =======================
@@ -169,7 +183,7 @@ catch "if you can't, use this scheme
 endtry
 
 if has("gui_running")
-  set gfn=Monaco\ for\ Powerline\ 11
+  set gfn=Source_Code_Pro:h10
   let g:Powerline_symbols = 'fancy'
 else
   let g:Powerline_symbols = 'compatible'
