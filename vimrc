@@ -380,5 +380,5 @@ let g:unite_source_file_mru_time_format = ''
 " config for airline
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+let g:airline_theme = 'jellybeans'
 
-let g:airline_theme = "light"
