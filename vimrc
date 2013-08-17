@@ -84,6 +84,7 @@ set ignorecase                  "ignore case when looking for patterns
 set smartcase                   "override ignore case when pattern has upper case
 set hlsearch                    "highlight matched patterns
 set incsearch                   "search incrementally for pattern
+set virtualedit=block           "allow virtual editing in visual mode
 
 "use system clipboard by default for yanking and pasting
 set clipboard=unnamed
