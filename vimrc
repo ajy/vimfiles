@@ -129,14 +129,12 @@ inoremap <F1> <Esc>
 noremap <F1> <Esc>
 vnoremap <F1> <Esc>
 
-" Quickly edit/reload the vimrc file in the repo
+" Quickly edit the vimrc file in the repo
 nmap <silent> <leader>ev :tabe $MYVIMRC<CR>
-nmap <silent> <leader>sv :echo "Reloading vimrc..."<CR>:so $MYVIMRC<CR>:echo "Reloading vimrc...DONE"<CR>
 
 " ================ Persistent swp/backup ==================
 " Keep swaps and backups in one place,
 " but avoid the current directory
-
 if isdirectory(expand('~/.cache/vim'))
     set directory^=~/.cache/vim//
     set backupdir^=~/.cache/vim//
@@ -168,10 +166,41 @@ set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points, without inserting <EOL>s
 
 if has('autocmd')
-    "Adjust indentation by filetype
-    autocmd FileType go setlocal ai ts=8 sw=8 noexpandtab
-    "Spellcheck git messages
-    autocmd BufRead COMMIT_EDITMSG setlocal spell!
+    augroup FileBasedSettings
+        autocmd!
+        "Adjust indentation by filetype
+        autocmd FileType go setlocal ai ts=8 sw=8 noexpandtab
+        "Spellcheck git messages
+        autocmd BufRead COMMIT_EDITMSG setlocal spell
+    augroup END
+
+    "Auto source vimrc when saved
+    augroup VimReload
+        autocmd!
+        autocmd BufWritePost $MYVIMRC,vimrc echo "Reloading vimrc..."
+        autocmd BufWritePost $MYVIMRC,vimrc so $MYVIMRC
+        autocmd BufWritePost $MYVIMRC,vimrc echo "DONE"
+    augroup END
+
+    "Always open help in a new tab
+    augroup HelpInTabs
+        autocmd!
+        autocmd BufEnter *.txt call HelpInNewTab()
+
+        function! HelpInNewTab ()
+            if &buftype == 'help'
+                execute "normal \<C-W>T"
+            endif
+        endfunction
+    augroup END
+
+    "automatically move to last position in a file
+    augroup ReloadPosition
+        "automatically jump to the last place you were in a previous session
+        autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
+                    \| exe "normal! g`\""
+                    \| endif
+    augroup END
 endif
 
 " ================ Completion =======================
@@ -258,11 +287,14 @@ inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()"
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup NeoOmniCompleteSettings
+    autocmd!
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup END
 
 " Settings for Unite
 
