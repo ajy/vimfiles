@@ -9,7 +9,7 @@ filetype off                    " required!
 set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle ( required! ) 
+" let Vundle manage Vundle ( required! )
 Bundle 'gmarik/vundle'
 
 "Autocompletion bundles
@@ -76,13 +76,13 @@ set showmatch                   "show matching bracket always
 set mouse=a                     "set mouse mode to all, so i can use it
 set laststatus=2                "always show the status line, required with powerline
 set nofoldenable                "Say no to code folding...
-set cpoptions+=$                "show $ at the end of the selection when using c,has to be here otherwise it gets reset
+set cpoptions+=$                "show $ at the end of the selection when using c
 set listchars=tab:▸\ ,eol:¬     "set characters to represent tabs and \n when visible
 set scrolloff=3                 "scroll with some context
 set sidescrolloff=5
 set spelllang=en_gb             "set spell to use british english
 set ignorecase                  "ignore case when looking for patterns
-set smartcase                   "overide ignore case when pattern has upper case
+set smartcase                   "override ignore case when pattern has upper case
 set hlsearch                    "highlight matched patterns
 set incsearch                   "search incrementally for pattern
 
