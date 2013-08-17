@@ -219,10 +219,12 @@ catch "if you can't, use this scheme
 endtry
 
 if has("gui_running")
-  set gfn=Source_Code_Pro:h10
-  let g:Powerline_symbols = 'fancy'
-else
-  let g:Powerline_symbols = 'compatible'
+  if has('dos')
+      set gfn=Source_Code_Pro:h10
+  endif
+  if has('unix')
+      set gfn=Source\ Code\ Pro\ 10
+  endif
 endif
 
 
@@ -247,10 +249,6 @@ let g:yankring_history_dir = '~/.vim'
 
 " open tagbar window
 nmap <F8> :TagbarToggle<CR>
-
-"open ctrlp window, fixes conflict between yankring mappings
-let g:ctrlp_map = '<leader>f'
-nnoremap <leader>b :CtrlPBuffer<CR>
 
 " clam bindings
 nnoremap ! :Clam<space>
