@@ -17,9 +17,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'Shougo/neocomplcache.vim'
 
 "file/directory movement bundles
-Bundle 'Lokaltog/vim-easymotion.git'
 Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-eunuch'
 if executable("ctags")
   "requires exuberant-ctags
@@ -31,7 +29,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'godlygeek/tabular'
-Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-abolish'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'sjl/clam.vim'
@@ -42,8 +40,8 @@ Bundle 'nelstrom/vim-visual-star-search'
 
 "Language support bundles
 Bundle 'tpope/vim-markdown'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-git'
+Bundle 'jnwhiteh/vim-golang'
 
 "misc bundles
 Bundle 'bling/vim-airline'
@@ -55,6 +53,7 @@ Bundle 'mileszs/ack.vim'
 
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'Pychimp/vim-luna'
 
 " ================ General Config ====================
 
