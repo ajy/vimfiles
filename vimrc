@@ -93,6 +93,11 @@ if has("unix")
     set clipboard=unnamedplus
 endif
 
+"use persistent undo if available
+if has('persistent_undo')
+    set undofile
+endif
+
 syntax on
 
 " ================ remapped keys =====================
@@ -135,12 +140,14 @@ nmap <silent> <leader>sv :echo "Reloading vimrc..."<CR>:so $MYVIMRC<CR>:echo "Re
 if isdirectory(expand('~/.cache/vim'))
     set directory^=~/.cache/vim//
     set backupdir^=~/.cache/vim//
+    set undodir=~/.cache/vim//
 else "never store it in the current directory ever
     if !isdirectory(expand('$HOME/.vim_cache'))
         silent execute '!mkdir '.expand('$HOME/.vim_cache')
     endif
     set backupdir^=$HOME/.vim_cache/
     set directory^=$HOME/.vim_cache/
+    set undodir=~/.vim_cache/
 endif
 
 " ================ Indentation ======================
