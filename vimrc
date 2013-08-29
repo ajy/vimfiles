@@ -47,6 +47,7 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'joonty/vdebug'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'mileszs/ack.vim'
@@ -54,6 +55,7 @@ Bundle 'mileszs/ack.vim'
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'Pychimp/vim-luna'
+Bundle 'tomasr/molokai'
 
 " ================ General Config ====================
 
