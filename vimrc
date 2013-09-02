@@ -56,6 +56,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'Pychimp/vim-luna'
 Bundle 'tomasr/molokai'
+Bundle 'chriskempson/base16-vim'
 
 " ================ General Config ====================
 
@@ -215,7 +216,7 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jp
 
 try
   "get custom colorscheme
-  colorscheme jellybeans
+  colorscheme base16-solarized
 catch "if you can't, use this scheme
   colorscheme slate
 endtry
@@ -382,5 +383,5 @@ let g:unite_source_file_mru_time_format = ''
 " config for airline
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_theme = 'jellybeans'
+let g:airline_theme = 'solarized'
 
