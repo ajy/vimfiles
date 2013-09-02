@@ -222,8 +222,8 @@ catch "if you can't, use this scheme
 endtry
 
 if has("gui_running")
-  if has('dos')
-      set gfn=Source_Code_Pro:h10
+  if has('win32')
+    set gfn=Source_Code_Pro:h10
   endif
   if has('unix')
       set gfn=Source\ Code\ Pro\ 10
