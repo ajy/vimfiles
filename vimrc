@@ -42,6 +42,7 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-git'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'derekwyatt/vim-scala'
 
 "misc bundles
 Bundle 'bling/vim-airline'
