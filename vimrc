@@ -25,7 +25,7 @@ if executable("ctags")
 endif
 
 "handy editing bundles
-Bundle 'sjl/gundo.vim'
+Bundle 'mbbill/undotree'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'godlygeek/tabular'
@@ -242,10 +242,9 @@ let NERDTreeIgnore = ['\.pyc$'] "ignore files in file browser
 " open NERDTree window
 nnoremap <F4> :NERDTreeToggle<CR>
 
-"Gundo
-let g:gundo_preview_bottom = 1 "improve how gundo window is displayed
-" open gundo window
-nnoremap <F3> :GundoToggle<CR>
+"Undotree
+" open undotree window
+nnoremap <F3> :UndotreeToggle<CR>
 
 "Yankring
 let g:yankring_persist = 0 "don't persist yankring across session
