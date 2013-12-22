@@ -28,7 +28,7 @@ endif
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
-Bundle 'godlygeek/tabular'
+Bundle 'junegunn/vim-easy-align'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-abolish'
 Bundle 'vim-scripts/YankRing.vim'
