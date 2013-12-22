@@ -52,6 +52,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'joonty/vdebug'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'mileszs/ack.vim'
+Bundle 'Keithbsmiley/investigate.vim'
 
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
