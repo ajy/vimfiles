@@ -46,7 +46,7 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
+Bundle 'mhinz/vim-signify'
 Bundle 'joonty/vdebug'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'mileszs/ack.vim'
@@ -252,9 +252,9 @@ let g:yankring_history_dir = '~/.vim'
 " open tagbar window
 nmap <F8> :TagbarToggle<CR>
 
-" clam bindings
-nnoremap ! :Clam<space>
-vnoremap ! :ClamVisual<space>
+
+" signify configuration options
+let g:signify_vcs_list = [ 'git', 'perforce' ]
 
 " Options for neocomplcache
 " Disable AutoComplPop.
