@@ -17,11 +17,13 @@ Bundle 'Shougo/neocomplcache.vim'
 
 "file/directory movement bundles
 Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-vinegar'
 Bundle 'tpope/vim-eunuch'
 if executable("ctags")
   "requires exuberant-ctags
   Bundle 'majutsushi/tagbar'
 endif
+Bundle 'tpope/vim-projectile'
 
 "handy editing bundles
 Bundle 'sjl/gundo.vim'
@@ -35,6 +37,7 @@ Bundle 'mhinz/vim-startify'
 Bundle 'Shougo/unite.vim'
 Bundle 'Yggdroot/indentLine'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'AndrewRadev/splitjoin.vim'
 
 "Language support bundles
 Bundle 'tpope/vim-markdown'
@@ -56,6 +59,8 @@ Bundle 'Keithbsmiley/investigate.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'Pychimp/vim-luna'
 Bundle 'chriskempson/base16-vim'
+Bundle 'daylerees/colour-schemes', {'rtp': "vim/"}
+Bundle 'reedes/vim-thematic'
 
 " ================ General Config ====================
 
