@@ -13,7 +13,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 "Autocompletion bundles
-Bundle 'Raimondi/delimitMate'
 Bundle 'Shougo/neocomplcache.vim'
 
 "file/directory movement bundles
@@ -32,7 +31,6 @@ Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-abolish'
 Bundle 'vim-scripts/YankRing.vim'
-Bundle 'sjl/clam.vim'
 Bundle 'mhinz/vim-startify'
 Bundle 'Shougo/unite.vim'
 Bundle 'Yggdroot/indentLine'
@@ -57,7 +55,6 @@ Bundle 'Keithbsmiley/investigate.vim'
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'Pychimp/vim-luna'
-Bundle 'tomasr/molokai'
 Bundle 'chriskempson/base16-vim'
 
 " ================ General Config ====================
