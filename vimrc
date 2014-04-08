@@ -14,6 +14,7 @@ Bundle 'gmarik/vundle'
 
 "Autocompletion bundles
 Bundle 'Shougo/neocomplcache.vim'
+Bundle 'Raimondi/delimitMate'
 
 "file/directory movement bundles
 Bundle 'scrooloose/nerdtree'
