@@ -307,7 +307,7 @@ augroup END
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 " Set up some custom ignores
-call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+call unite#custom_source('file_rec,file_rec/async,file,buffer,grep',
       \ 'ignore_pattern', join([
       \ '\.git/',
       \ ], '\|'))
@@ -318,10 +318,10 @@ nmap <space> [unite]
 
 " General fuzzy search
 nnoremap <silent> [unite]<space> :<C-u>Unite
-      \ -buffer-name=files buffer file_mru file_rec<CR>
+      \ -buffer-name=files buffer file_rec<CR>
 
 " Quick buffer and mru
-nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=buffers buffer file_mru<CR>
+nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=buffers buffer<CR>
 
 " Quick yank history
 nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<CR>
@@ -378,11 +378,7 @@ let g:unite_split_rule = "botright"
 " Shorten the default update date of 500ms
 let g:unite_update_time = 200
 
-let g:unite_source_file_mru_limit = 1000
 let g:unite_cursor_line_highlight = 'TabLineSel'
-
-let g:unite_source_file_mru_filename_format = ':~:.'
-let g:unite_source_file_mru_time_format = ''
 
 " config for airline
 let g:airline_left_sep = ''
