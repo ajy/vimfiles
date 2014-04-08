@@ -58,9 +58,7 @@ Bundle 'Keithbsmiley/investigate.vim'
 
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'Pychimp/vim-luna'
 Bundle 'chriskempson/base16-vim'
-Bundle 'daylerees/colour-schemes', {'rtp': "vim/"}
 Bundle 'reedes/vim-thematic'
 
 " ================ General Config ====================
@@ -219,22 +217,39 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jp
 
 " ================ Appearance =======================
 
-try
-  "get custom colorscheme
-  colorscheme jellybeans
-catch "if you can't, use this scheme
-  colorscheme slate
-endtry
+"thematic configuration
+let g:thematic#defaults = {
+            \ 'airline-theme': 'base16',
+            \ 'background': 'dark',
+            \ 'laststatus': 2,
+            \ 'typeface': 'Source Code Pro',
+            \ 'font-size': 10,
+            \ }
 
-if has("gui_running")
-  if has('win32')
-    set gfn=Source_Code_Pro:h10
-  endif
-  if has('unix')
-      set gfn=Source\ Code\ Pro\ 10
-  endif
-endif
+let g:thematic#themes = {
+            \   'solarized-dark':{
+            \     'colorscheme': 'base16-solarized',
+            \     'background': 'dark',
+            \   },
+            \   'solarized-light':{
+            \     'colorscheme': 'base16-solarized',
+            \     'background': 'light',
+            \   },
+            \   'lakeside':{
+            \     'colorscheme': 'base16-atelierlakeside',
+            \   },
+            \   'tomorrow':{
+            \     'colorscheme': 'base16-tomorrow',
+            \   },
+            \   'ocean':{
+            \     'colorscheme': 'base16-ocean',
+            \   },
+            \   'paraiso':{
+            \     'colorscheme': 'base16-paraiso',
+            \   },
+            \ }
 
+let g:thematic#theme_name = 'tomorrow'
 
 " ================ Plugin customisation =============
 
@@ -384,5 +399,4 @@ let g:unite_cursor_line_highlight = 'TabLineSel'
 " config for airline
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_theme = 'jellybeans'
 
