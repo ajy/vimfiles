@@ -39,6 +39,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Yggdroot/indentLine'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'AndrewRadev/splitjoin.vim'
+Bundle 'tpope/vim-sleuth'
 
 "Language support bundles
 Bundle 'tpope/vim-markdown'
