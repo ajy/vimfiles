@@ -95,13 +95,13 @@ set virtualedit=block           "allow virtual editing in visual mode
 "use system clipboard by default for yanking and pasting
 set clipboard=unnamed
 if has("unix")
-    " X system clipboard is different,so
-    set clipboard=unnamedplus
+  " X system clipboard is different,so
+  set clipboard=unnamedplus
 endif
 
 "use persistent undo if available
 if has('persistent_undo')
-    set undofile
+  set undofile
 endif
 
 syntax on
@@ -142,16 +142,16 @@ nmap <silent> <leader>ev :tabe $MYVIMRC<CR>
 " Keep swaps and backups in one place,
 " but avoid the current directory
 if isdirectory(expand('~/.cache/vim'))
-    set directory^=~/.cache/vim//
-    set backupdir^=~/.cache/vim//
-    set undodir=~/.cache/vim//
+  set directory^=~/.cache/vim//
+  set backupdir^=~/.cache/vim//
+  set undodir=~/.cache/vim//
 else "never store it in the current directory ever
-    if !isdirectory(expand('$HOME/.vim_cache'))
-        silent execute '!mkdir '.expand('$HOME/.vim_cache')
-    endif
-    set backupdir^=$HOME/.vim_cache/
-    set directory^=$HOME/.vim_cache/
-    set undodir=~/.vim_cache/
+  if !isdirectory(expand('$HOME/.vim_cache'))
+    silent execute '!mkdir '.expand('$HOME/.vim_cache')
+  endif
+  set backupdir^=$HOME/.vim_cache/
+  set directory^=$HOME/.vim_cache/
+  set undodir=~/.vim_cache/
 endif
 
 " ================ Indentation ======================
@@ -172,41 +172,41 @@ set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points, without inserting <EOL>s
 
 if has('autocmd')
-    augroup FileBasedSettings
-        autocmd!
-        "Adjust indentation by filetype
-        autocmd FileType go setlocal ai ts=8 sw=8 noexpandtab
-        "Spellcheck git messages
-        autocmd BufRead COMMIT_EDITMSG setlocal spell
-    augroup END
+  augroup FileBasedSettings
+    autocmd!
+    "Adjust indentation by filetype
+    autocmd FileType go setlocal ai ts=8 sw=8 noexpandtab
+    "Spellcheck git messages
+    autocmd BufRead COMMIT_EDITMSG setlocal spell
+  augroup END
 
-    "Auto source vimrc when saved
-    augroup VimReload
-        autocmd!
-        autocmd BufWritePost $MYVIMRC,vimrc echo "Reloading vimrc..."
-        autocmd BufWritePost $MYVIMRC,vimrc so $MYVIMRC
-        autocmd BufWritePost $MYVIMRC,vimrc echo "DONE"
-    augroup END
+  "Auto source vimrc when saved
+  augroup VimReload
+    autocmd!
+    autocmd BufWritePost $MYVIMRC,vimrc echo "Reloading vimrc..."
+    autocmd BufWritePost $MYVIMRC,vimrc so $MYVIMRC
+    autocmd BufWritePost $MYVIMRC,vimrc echo "DONE"
+  augroup END
 
-    "Always open help in a new tab
-    augroup HelpInTabs
-        autocmd!
-        autocmd BufEnter *.txt call HelpInNewTab()
+  "Always open help in a new tab
+  augroup HelpInTabs
+    autocmd!
+    autocmd BufEnter *.txt call HelpInNewTab()
 
-        function! HelpInNewTab ()
-            if &buftype == 'help'
-                execute "normal \<C-W>T"
-            endif
-        endfunction
-    augroup END
+    function! HelpInNewTab ()
+      if &buftype == 'help'
+        execute "normal \<C-W>T"
+      endif
+    endfunction
+  augroup END
 
-    "automatically move to last position in a file
-    augroup ReloadPosition
-        "automatically jump to the last place you were in a previous session
-        autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
-                    \| exe "normal! g`\""
-                    \| endif
-    augroup END
+  "automatically move to last position in a file
+  augroup ReloadPosition
+    "automatically jump to the last place you were in a previous session
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
+          \| exe "normal! g`\""
+          \| endif
+  augroup END
 endif
 
 " ================ Completion =======================
@@ -219,35 +219,35 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jp
 
 "thematic configuration
 let g:thematic#defaults = {
-            \ 'airline-theme': 'base16',
-            \ 'background': 'dark',
-            \ 'laststatus': 2,
-            \ 'typeface': 'Source Code Pro',
-            \ 'font-size': 10,
-            \ }
+      \ 'airline-theme': 'base16',
+      \ 'background': 'dark',
+      \ 'laststatus': 2,
+      \ 'typeface': 'Source Code Pro',
+      \ 'font-size': 10,
+      \ }
 
 let g:thematic#themes = {
-            \   'solarized-dark':{
-            \     'colorscheme': 'base16-solarized',
-            \     'background': 'dark',
-            \   },
-            \   'solarized-light':{
-            \     'colorscheme': 'base16-solarized',
-            \     'background': 'light',
-            \   },
-            \   'lakeside':{
-            \     'colorscheme': 'base16-atelierlakeside',
-            \   },
-            \   'tomorrow':{
-            \     'colorscheme': 'base16-tomorrow',
-            \   },
-            \   'ocean':{
-            \     'colorscheme': 'base16-ocean',
-            \   },
-            \   'paraiso':{
-            \     'colorscheme': 'base16-paraiso',
-            \   },
-            \ }
+      \   'solarized-dark':{
+      \     'colorscheme': 'base16-solarized',
+      \     'background': 'dark',
+      \   },
+      \   'solarized-light':{
+      \     'colorscheme': 'base16-solarized',
+      \     'background': 'light',
+      \   },
+      \   'lakeside':{
+      \     'colorscheme': 'base16-atelierlakeside',
+      \   },
+      \   'tomorrow':{
+      \     'colorscheme': 'base16-tomorrow',
+      \   },
+      \   'ocean':{
+      \     'colorscheme': 'base16-ocean',
+      \   },
+      \   'paraiso':{
+      \     'colorscheme': 'base16-paraiso',
+      \   },
+      \ }
 
 let g:thematic#theme_name = 'tomorrow'
 
@@ -296,8 +296,8 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplcache#smart_close_popup() . "\<CR>"
-    " For no inserting <CR> key.
-      "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -309,12 +309,12 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()"
 
 " Enable omni completion.
 augroup NeoOmniCompleteSettings
-    autocmd!
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  autocmd!
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup END
 
 " Settings for Unite
@@ -358,27 +358,27 @@ nnoremap <silent> [unite]c :<C-u>Unite -buffer-name=commands command<CR>
 autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
 
-    "mappings to leave unite
-    nmap <buffer> <ESC> <Plug>(unite_exit)
-    imap <buffer> <ESC> <Plug>(unite_insert_leave)
+  "mappings to leave unite
+  nmap <buffer> <ESC> <Plug>(unite_exit)
+  imap <buffer> <ESC> <Plug>(unite_insert_leave)
 
-    "mappings to move in unite buffers
-    imap <buffer> <c-j> <Plug>(unite_insert_leave)
-    nmap <buffer> <c-j> <Plug>(unite_loop_cursor_down)
-    nmap <buffer> <c-k> <Plug>(unite_loop_cursor_up)
+  "mappings to move in unite buffers
+  imap <buffer> <c-j> <Plug>(unite_insert_leave)
+  nmap <buffer> <c-j> <Plug>(unite_loop_cursor_down)
+  nmap <buffer> <c-k> <Plug>(unite_loop_cursor_up)
 
-    imap <buffer> <c-a> <Plug>(unite_choose_action)
+  imap <buffer> <c-a> <Plug>(unite_choose_action)
 
-    nmap <buffer> <C-r> <Plug>(unite_redraw)
-    imap <buffer> <C-r> <Plug>(unite_redraw)
+  nmap <buffer> <C-r> <Plug>(unite_redraw)
+  imap <buffer> <C-r> <Plug>(unite_redraw)
 
-    "mappings to open in split
-    inoremap <silent><buffer><expr> <C-s> unite#do_action('split')
-    nnoremap <silent><buffer><expr> <C-s> unite#do_action('split')
-    inoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-    nnoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+  "mappings to open in split
+  inoremap <silent><buffer><expr> <C-s> unite#do_action('split')
+  nnoremap <silent><buffer><expr> <C-s> unite#do_action('split')
+  inoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+  nnoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
 
-    nnoremap <silent><buffer><expr> cd     unite#do_action('lcd')
+  nnoremap <silent><buffer><expr> cd     unite#do_action('lcd')
 
 endfunction
 
