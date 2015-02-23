@@ -242,15 +242,15 @@ let g:thematic#themes = {
       \   'tomorrow':{
       \     'colorscheme': 'base16-tomorrow',
       \   },
-      \   'ocean':{
-      \     'colorscheme': 'base16-ocean',
+      \   'seaside':{
+      \     'colorscheme': 'base16-seaside',
       \   },
       \   'paraiso':{
       \     'colorscheme': 'base16-paraiso',
       \   },
       \ }
 
-let g:thematic#theme_name = 'tomorrow'
+let g:thematic#theme_name = 'paraiso'
 
 " ================ Plugin customisation =============
 
