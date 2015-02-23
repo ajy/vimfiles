@@ -10,57 +10,57 @@ set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle ( required! )
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 "Autocompletion bundles
-Bundle 'Shougo/neocomplcache.vim'
-Bundle 'jiangmiao/auto-pairs'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'jiangmiao/auto-pairs'
 
 "file/directory movement bundles
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-vinegar'
-Bundle 'tpope/vim-eunuch'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-eunuch'
 if executable("ctags")
   "requires exuberant-ctags
   Bundle 'majutsushi/tagbar'
 endif
-Bundle 'tpope/vim-projectile'
+Plugin 'tpope/vim-projectile'
 
 "handy editing bundles
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-abolish'
-Bundle 'vim-scripts/YankRing.vim'
-Bundle 'mhinz/vim-startify'
-Bundle 'Shougo/unite.vim'
-Bundle 'Yggdroot/indentLine'
-Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'AndrewRadev/splitjoin.vim'
-Bundle 'tpope/vim-sleuth'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-abolish'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'mhinz/vim-startify'
+Plugin 'Shougo/unite.vim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'nelstrom/vim-visual-star-search'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'tpope/vim-sleuth'
 
 "Language support bundles
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-git'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'derekwyatt/vim-scala'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-git'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'derekwyatt/vim-scala'
 
 "misc bundles
-Bundle 'bling/vim-airline'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-fugitive'
-Bundle 'mhinz/vim-signify'
-Bundle 'joonty/vdebug'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'mileszs/ack.vim'
-Bundle 'Keithbsmiley/investigate.vim'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mhinz/vim-signify'
+Plugin 'joonty/vdebug'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'mileszs/ack.vim'
+Plugin 'Keithbsmiley/investigate.vim'
 
 " Colorschemes
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'chriskempson/base16-vim'
-Bundle 'reedes/vim-thematic'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'chriskempson/base16-vim'
+Plugin 'reedes/vim-thematic'
 
 " ================ General Config ====================
 
