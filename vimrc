@@ -45,7 +45,6 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-git'
 Plugin 'jnwhiteh/vim-golang'
-Plugin 'derekwyatt/vim-scala'
 
 "misc bundles
 Plugin 'bling/vim-airline'
