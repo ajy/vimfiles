@@ -1,65 +1,62 @@
 " Use Vim settings, rather then Vi settings (much better!).
 set nocompatible
 
-" =============== Vundle Initialization ===============
-" This loads all the plugins in ~/.vim/bundle
-" Use vundle plugin to manage all other plugins
+" =============== vim-plug Initialization ===============
+" This loads all the plugins in ~/.vim/plugged
+" Use vim-plug plugin to manage all other plugins
 
-filetype off                    " required!
-set rtp+=$HOME/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle ( required! )
-Plugin 'gmarik/vundle'
+call plug#begin()
 
 "Autocompletion bundles
-Plugin 'Shougo/neocomplcache.vim'
-Plugin 'jiangmiao/auto-pairs'
+Plug 'Shougo/neocomplcache.vim'
+Plug 'jiangmiao/auto-pairs'
 
 "file/directory movement bundles
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-eunuch'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-eunuch'
 if executable("ctags")
   "requires exuberant-ctags
-  Bundle 'majutsushi/tagbar'
+  Plug 'majutsushi/tagbar'
 endif
-Plugin 'tpope/vim-projectile'
+Plug 'tpope/vim-projectile'
 
 "handy editing bundles
-Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-abolish'
-Plugin 'vim-scripts/YankRing.vim'
-Plugin 'mhinz/vim-startify'
-Plugin 'Shougo/unite.vim'
-Plugin 'Yggdroot/indentLine'
-Plugin 'nelstrom/vim-visual-star-search'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'tpope/vim-sleuth'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-abolish'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'mhinz/vim-startify'
+Plug 'Shougo/unite.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'tpope/vim-sleuth'
 
 "Language support bundles
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-git'
-Plugin 'jnwhiteh/vim-golang'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-git'
+Plug 'jnwhiteh/vim-golang'
 
 "misc bundles
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
-Plugin 'mhinz/vim-signify'
-Plugin 'joonty/vdebug'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'mileszs/ack.vim'
-Plugin 'Keithbsmiley/investigate.vim'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
+Plug 'joonty/vdebug'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'mileszs/ack.vim'
+Plug 'Keithbsmiley/investigate.vim'
 
 " Colorschemes
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'chriskempson/base16-vim'
-Plugin 'reedes/vim-thematic'
+Plug 'nanotech/jellybeans.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'reedes/vim-thematic'
+
+call plug#end()
 
 " ================ General Config ====================
 
