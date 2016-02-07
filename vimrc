@@ -215,9 +215,10 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jp
 
 " ================ Appearance =======================
 
+let base16colorspace=256
 "thematic configuration
 let g:thematic#defaults = {
-      \ 'airline-theme': 'base16',
+      \ 'airline-theme': 'dark',
       \ 'background': 'dark',
       \ 'laststatus': 2,
       \ 'typeface': 'Source Code Pro',
@@ -244,6 +245,7 @@ let g:thematic#themes = {
       \   },
       \   'paraiso':{
       \     'colorscheme': 'base16-paraiso',
+      \     'airline-theme': 'base16_paraiso',
       \   },
       \ }
 
