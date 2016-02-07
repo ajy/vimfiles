@@ -42,7 +42,8 @@ Plug 'tpope/vim-git'
 Plug 'jnwhiteh/vim-golang'
 
 "misc bundles
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
