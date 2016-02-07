@@ -107,7 +107,7 @@ syntax on
 " ================ remapped keys =====================
 
 " remap leader key
-let mapleader = ","
+let mapleader = " "
 
 " shows invisibles in normal mode
 nmap <leader>l :set list!<CR>
